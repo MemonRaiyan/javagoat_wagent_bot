@@ -47,7 +47,7 @@ async function startBot() {
             userStates[sender].details = text;
 
             await sock.sendMessage(sender, {
-                text: `✅ *Thank you!*\n\nOur team will contact you shortly.\n\n📍 *Sachora Clinic*\nSarkhej, Ahmedabad\n📞 9725181418`
+                text: `✅ *Thank you!*\n\nOur team will contact you shortly.\n\n📍 *Sachora Aesthetic & Cosmetology Clinic*\nArshad Residency,Amber Tower,Sarkhej, Ahmedabad\n📞 9725181418 & 7048181418`
             });
 
             delete userStates[sender];
@@ -122,7 +122,7 @@ async function startBot() {
         if (text.includes("address") || text.includes("location")) {
 
             await sock.sendMessage(sender, {
-                text: `📍 *Sachora Aesthetic & Cosmetology Clinic*\n\nArshad Residency,\nTP-85 Road, Sarkhej,\nAhmedabad – 380055\n\n📞 9725181418`
+                text: `📍 *Sachora Aesthetic & Cosmetology Clinic*\n\nArshad Residency,\nTP-85 Road,Amber Tower, Sarkhej,\nAhmedabad – 380055\n\n📞 9725181418 & 7048181418`
             });
 
             return;
