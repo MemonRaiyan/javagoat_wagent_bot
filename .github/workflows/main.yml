@@ -1,13 +1,12 @@
-name: JavaGoat-WhatsApp-Bot
+name: Sachora-WhatsApp-Bot
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */5 * * *' 
 
 jobs:
-  build:
+  run-bot:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -20,7 +19,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Start AI Bot
+      - name: Run Bot (Keep Alive)
         env:
           FIREBASE_URL: ${{ secrets.FIREBASE_URL }}
-        run: npm start
+        run: |
+          while true; do
+            echo "Starting bot..."
+            node index.js
+            echo "Bot crashed. Restarting in 5 seconds..."
+            sleep 5
+          done
